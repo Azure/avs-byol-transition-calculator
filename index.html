@@ -1,4 +1,4 @@
-<!-- AVS BYOL Transition Calculator v1.37 · Built 2026-08-24 09:40 -->
+<!-- AVS BYOL Transition Calculator v1.37 · Built 2026-08-24 22:24 -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -286,7 +286,7 @@ footer p { margin: 0; color: #0078d4; font-size: 13px; font-weight: 400; }
           <colgroup><col class="region-column"><col class="current-sku-column"><col class="current-nodes-column"><col class="cost-column"><col class="future-sku-column"><col class="future-nodes-column"><col class="term-column"><col class="discount-column"></colgroup>
           <thead>
             <tr class="state-groups"><th rowspan="2">Azure region</th><th colspan="3" class="current-heading state-divider">Current state</th><th colspan="4" class="future-heading state-divider">Future state</th></tr>
-            <tr class="field-headings"><th class="state-divider">SKU</th><th>Nodes</th><th>Monthly / node <span class="required-label">Required</span></th><th class="state-divider">SKU <span class="required-label">Required</span></th><th>Nodes</th><th>Term</th><th>Discount</th></tr>
+            <tr class="field-headings"><th class="state-divider">SKU</th><th>Nodes</th><th>Current monthly cost / node <span class="required-label">Required</span></th><th class="state-divider">SKU <span class="required-label">Required</span></th><th>Nodes</th><th>Term</th><th>Discount</th></tr>
           </thead>
           <tbody id="groups-body"></tbody>
         </table>
@@ -386,7 +386,7 @@ lucide.createIcons({icons});\``);if(typeof document>"u")throw new Error("`create
       <td class="shared-state" data-label="Azure region"><select data-field="region">${e.map(i=>H(i.id,i.name,t.region)).join("")}</select></td>
       <td class="current-state state-start" data-state="Current state" data-label="Current SKU"><select data-field="currentFamily">${n.map(i=>H(i,i,t.currentFamily)).join("")}</select></td>
       <td class="current-state" data-label="Current nodes"><input data-field="currentNodes" type="number" min="0" step="1" value="${t.currentNodes}"></td>
-      <td class="current-state" data-label="Current monthly / node \xB7 Required"><div class="table-money required-field"><span>${o.currency.value}</span><input data-field="currentMonthlyPerNode" type="number" min="0" step="1" inputmode="numeric" value="${t.currentMonthlyPerNode}" placeholder="Required" required></div></td>
+      <td class="current-state" data-label="Current monthly cost / node \xB7 Required"><div class="table-money required-field"><span>${o.currency.value}</span><input data-field="currentMonthlyPerNode" type="number" min="0" step="1" inputmode="numeric" value="${t.currentMonthlyPerNode}" placeholder="Required" required></div></td>
       <td class="future-state state-start" data-state="Future state" data-label="Future SKU \xB7 Required"><select class="required-select${t.futureFamily?" has-value":""}" data-field="futureFamily" required><option value="">Select SKU</option>${n.map(i=>H(i,`${i} BYOL`,t.futureFamily)).join("")}</select></td>
       <td class="future-state" data-label="Future nodes"><input data-field="futureNodes" type="number" min="0" step="1" value="${t.futureNodes}"></td>
       <td class="future-state" data-label="Future term"><select data-field="term"${t.futureFamily?"":" disabled"}>${t.futureFamily?a.map(i=>H(i.id,i.label,t.term)).join(""):'<option value="">Select SKU first</option>'}</select></td>
